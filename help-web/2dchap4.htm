@@ -1,0 +1,250 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (WinNT; I) [Netscape]">
+   <meta name="AUTHOR" content="*">
+</head>
+<body>
+
+<center>
+<h1>
+<b><font size=+2>IAS METHOD FOR 2D DATA ANALYSIS ON PC's</font></b></h1></center>
+
+<center>Andrew G. Detwiler and Kenneth R. Hartman
+<br>Institute of Atmospheric Sciences
+<br>South Dakota School of Mines and Technology
+<br>501 E. St. Joseph Street
+<br>Rapid City, SD 57701-3995
+<p>
+<hr WIDTH="100%"></center>
+
+<h2>
+<a NAME="CHAPTER 4"></a><font size=+1>CHAPTER 4: TOUCH2D PROGRAM</font></h2>
+This program allows the investigator to visually scan and, if desired,
+modify some of the parameters associated with individual particles. (Currently,
+a particle's habit, diameter, and mass may be altered.) TOUCH2D is usually
+run to doublecheck the accuracy of the automated habit classification program
+and to provide the user with a way of editing those particles that the
+eyeball interprets differently than does the computer algorithm. The program
+is called in a fashion similar to PRELIM2D; namely, by making sure the
+program file is in the current directory or directory path and entering
+<h3>
+<font size=+0>TOUCH2D</font></h3>
+The user is then prompted for the name of the input archive file and given
+the option of creating a modified output file. If one merely wishes to
+view the particles on the graphics screen, then an output file should not
+be selected.
+<p>Some information relating to the input file is displayed (Fig. B1),
+and then a menu like the one in Figure B2 appears. A brief description
+of some of the less obvious items in the SETUP menu follows:
+<h3>
+<font size=+0>Setup Menu</font></h3>
+
+<ul>
+<li>
+<b>Plt Size</b> - This is the magnification factor (more or less) of the
+particle images when they are drawn on the screen. A value of 0 means that
+one probe diode will be represented by one screen pixel. A value of 1 results
+in each diode being represented by a rectangular block of pixels (4 x 3
+for EGA monitors) that yields an approximate 1:1 X to Y appearance. The
+choices of 2, 3, or 4 are merely the same thing as 1, but with a corresponding
+magnification factor.</li>
+
+<li>
+<b>Part Lab </b>- Short for particle label, these two columns list various
+parameters which may be output on the screen above the graphical representation
+of the particle images. Only the highlighted items will be displayed when
+the particles are drawn.</li>
+
+<li>
+<b>Habit </b>- Classification of particle based on geometrical appearance.</li>
+
+<li>
+<b>Time Lapse</b> - time in microseconds between the arrival of the current
+particle and its predecessor.</li>
+
+<li>
+<b>Area Ratio</b> - one of several measures of roundness. The actual particle
+cross-sectional area is compared to that of a circle with the same "diameter"
+as that attributed to the particle. The value is expressed as a percentage.</li>
+
+<li>
+<b>Heyms Diam </b>- The Heymsfield diameter is normally taken to be the
+greater of the maximum X or Y span of the particle, although sometimes
+the diameter may be greater if the particle has been reconstructed. This
+occurs for those particles which were only partially in view. In this case,
+the numeric value displayed on the screen is followed by a plus sign.</li>
+
+<li>
+<b>Holyroyd Diam</b> - It is the longest distance through the particle,
+not being restricted to purely horizontal or vertical distance (e.g., a
+diagonal).</li>
+
+<li>
+<b>Mass (Andy) </b>- particle mass as computed by Andy Detwiler's best
+guess empirical algorithm. Units are in nanograms.</li>
+
+<li>
+<b>Mass (Sphere)</b> - particle mass assuming a spherical particle with
+a diameter equal to the Heymsfield diameter. This is perhaps more accurate
+than Andy's method for liquid particles, but less accurate for solid particles.</li>
+
+<li>
+<b>PDA Ratio </b>- perimeter x diameter/area. This yields a measure of
+roundness and regularity of shape. A snowflake, for instance, would have
+a greater value than a water drop.</li>
+
+<li>
+<b>Equiv Circle</b> - equivalent diameter of a spherical particle having
+a cross-sectional area equal to that of the particle in question.</li>
+</ul>
+When all the desired items have been selected (highlighted), press the
+"R" key and confirm that you're ready to proceed. The program scans through
+the archive file until it finds the first record within the specified time
+range. It clears the screen and outputs buffer information on the left-hand
+side and an Action menu on the right (Fig. B3). Unlike PRELIM2D, the user
+must interactively move from one buffer to another in the Action menu.
+When all buffers within the selected time range have been viewed or modified,
+the screen returns to the Setup menu. However, the user may return to the
+Setup menu at any time to modify menu selections (such as specifying a
+different set of labels). When the end of file is reached, or the user
+selects "E" for exit, the program copies all remaining records to the output
+file, if one was selected, and then terminates. Pressing CTRL-C from any
+screen will immediately terminate the program also, but if there is an
+output file, all remaining records on the input file will not get copied.
+This is referred to as not exiting gracefully.
+<center>
+<h3>
+<font size=+0>Action Menu</font></h3></center>
+The functions that the action menu may perform are as follows:
+<br>&nbsp;
+<table BORDER >
+<tr>
+<td WIDTH="250" HEIGHT="100%">
+<dl><b>SETUP</b> <b>menu</b></dl>
+</td>
+
+<td WIDTH="100%" HEIGHT="100%">Return to previous screen display, usually
+to change the particle labels that have been chosen or to select a different
+time range.</td>
+</tr>
+
+<tr>
+<td><b>Next Record&nbsp;</b></td>
+
+<td>Read next record and display habit and buffer info.</td>
+</tr>
+
+<tr>
+<td><b>Plot Habit&nbsp;</b></td>
+
+<td>Draw the graphical representation of particles within a particular
+habit or all habits. When this option is selected, the action menu is replaced
+on the right-hand side by the select habit menu.</td>
+</tr>
+
+<tr>
+<td><b>Continue Plot&nbsp;</b></td>
+
+<td>This selection is only visible if more particles of the selected habit
+remain to be displayed; i.e., not all of them fit on the screen at one
+time.</td>
+</tr>
+
+<tr>
+<td><b>Previous Record</b></td>
+
+<td>Rereads the previous record and displays habit breakdown. This option
+cannot be selected consecutively without an intervening Next Record command
+or a new time range via the Setup menu. In other words, if one is proceeding
+through an archive file and displaying buffer number n, it is possible
+to move back to record n-1, but not possible to then immediately request
+buffer n-2.&nbsp;</td>
+</tr>
+
+<tr>
+<td><b>Diameter Range&nbsp;</b></td>
+
+<td>Allows the user to set a minimum and maximum diameter range so that
+only particles with diameters within that range will be plotted on the
+screen. The program displays the current settings and prompts the user
+for new values.</td>
+</tr>
+
+<tr>
+<td><b>Record Summary</b></td>
+
+<td>Redisplay the statistical information for the current buffer on the
+left-hand screen (which presumably was erased when particles were plotted).</td>
+</tr>
+
+<tr>
+<td><b>Change Particle</b></td>
+
+<td>Modify either a particle's habit designation, Heymsfield diameter,
+or calculated mass. Sometimes modifying one of these will, in turn, affect
+other calculated values. When this option is selected, further menus will
+appear to guide the user through the change process. (Note: This option,
+like the Continue Plot one, is not visible until some particle(s) have
+been displayed on the screen.)&nbsp;</td>
+</tr>
+
+<tr>
+<td><b>View Buffer</b></td>
+
+<td>This option is not available on CGA monitors. When selected, it enables
+the screen display to be toggled between the current display and one similar
+to the VIEWIMG program; namely, one which displays the entire 2D buffer,
+as in Figure B9.&nbsp;</td>
+</tr>
+</table>
+
+<p>With the exception of the Setup menu, which occupies the entire screen,
+all other menus appear on the right portion of the screen, with either
+text or graphics output on the left side. In addition to the two main menus,
+there are several other screen menus which appear, depending upon prior
+choices. They are hopefully self-explanatory once they appear, but perhaps
+a brief discussion of them here might be beneficial.
+<ul>
+<li>
+<b>Select Habit Menu </b>- The different habits which may be selected are
+displayed. The user positions the cursor at the desired habit (or All Habits)
+and activates that choice with the Enter key or mouse. This menu appears
+when the user selects the Plot Habit option or when he wishes to modify
+a particle's habit. (See Fig. B4). Images of the selected particles, along
+with their chosen attributes, are displayed on the left screen as in Figure
+B6.</li>
+
+<li>
+<b>Diameter Range Menu -</b> This is not really a menu, but rather two
+successive prompts to obtain new minimum and maximum diameter values. Being
+within the acceptable range is one of the criteria which must be met before
+a particle is displayed on the screen. The initial values are 0 and 50000
+(essentially everything). (Fig. B5).</li>
+
+<li>
+<b>Select Particle Menu</b> - This menu appears when the Change Particle
+entry of the Action Menu is chosen. One chooses from the particle numbers
+displayed on the left screen, as in Figure B7.</li>
+
+<p><br><b>Modify Particle Menu </b>- The particle's current values for
+habit type, Heymsfield diameter, and mass calculation are displayed, in
+that order. The user may click on any of these fields and then enter new
+guesses. Note that a change in one of the first two fields may result in
+a recomputation of the mass values, so if a specific mass number is desired,
+it should be entered after any other changes. To make the changes permanent,
+press the Save Changes entry. If you have second thoughts, press Esc or
+the middle mouse key. An example appears in Figure B8.
+<p><font size=+0><a href="2dintro.htm">Introduction</a></font>
+<p><font size=+0><a href="2dchap1.htm">Chapter 1 - Discussion of Probes</a></font>
+<p><font size=+0><a href="2dchap2.htm">Chapter 2 - Particle Shadow Classification</a></font>
+<p><font size=+0><a href="2dchap3.htm">Chapter 3 - PRELIM2D Program</a></font>
+<p><font size=+0><a href="2dchap5.htm">Chapter 5 - ANALYZE and ANELAP</a></font>
+<p><font size=+0><a href="2dref.htm">References</a></font>
+<center>
+<p><a href="../index.htm">T-28 Home Page</a></center>
+</ul>
+
+</body>
+</html>
