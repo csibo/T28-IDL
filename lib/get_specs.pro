@@ -83,7 +83,7 @@ spec = {	probe_type : [ 1 , 2 , 3 , 4 , 5, 6 ]								, $
 	   		time_thresh : [ 1.1 , 0.11 , 0.26 , 0.11 , 0.0, 0.11 ]				, $
 	   		der_thresh : [ 2.0 , 0.7 , 0.7 , 0.7 , 0.0, 0.7 ]					, $
 	   		system_type : [ 1 , 1 , 2 , 1 , 1, 1 ]								, $
-	   		data_path : [ '/net/work/T28/idl/data/, $
+	   		data_path : [ '/net/work/T28/idl/data/', $
 	   					  dir1, $
 	   					  data_file, $
 	   					  dir1, $

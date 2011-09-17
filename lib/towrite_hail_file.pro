@@ -64,7 +64,7 @@ times_red = long(reform(data(0,*)))
 times_red = times_red    ;+ 60000l
 times_red = strtrim(string(times_red),2)
 hms2hrs,times_red,time_red
-stop
+
 
 ind_hail = where(tags eq 150,ni)
 ;use the reduced data to extract the channel info for the hail counts
@@ -78,7 +78,7 @@ endfor
 ;read HAIL counts
 ;------------------------------------------------------------
 ;- Get the reduced TAS for the time closest to the 2DC buffer_num
- tem = min(abs(state2dc.time_red - state2dc.time(state2dc.buffer_num)),ind_red)
+ tem = min(abs((state2dc.time_red) - (state2dc.time(state2dc.buffer_num))),ind_red)
  reduced_time = state2dc.time_red(ind_red)
  calc_tas = state2dc.calc_tas(ind_red)
 ;- Extract the hail data for the 5 seconds following the current HVPS buffer time
@@ -87,7 +87,7 @@ endfor
  hail_mean = float(hail_total) / 5.
 ;- Read the hail channel data
  read_hail_chn,hail_chn,vol,bin_width,bins,bine
-stop
+
 ;- Convert mean hail counts to #/m3-mm
 ;- 100 m3/km is the ~ volume sampled HAIL probe
 ;- at 100 m/s in m3
