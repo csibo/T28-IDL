@@ -88,7 +88,7 @@ if err eq 0 then begin
     readu,unit,totbytes
     readu,unit,time_hrs
     readu,unit,time_hms
-stop
+
     free_lun,unit
 
 if fltno eq 751.0 then begin
