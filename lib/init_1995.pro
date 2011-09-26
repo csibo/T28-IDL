@@ -1,4 +1,4 @@
-; Copyright © 2001, IAS, SD School of Mines and Technology.
+; Copyright ï¿½ 2001, IAS, SD School of Mines and Technology.
 ; This software is provided as is without any warranty whatsoever.
 ; It may be freely used, copied or distributed, for non-commercial
 ; purposes. This copyright notice must be kept with any copy of this
