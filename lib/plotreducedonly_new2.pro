@@ -258,6 +258,7 @@ endif
 if ((fltnos ge 654) AND (fltnos le 671)) then begin
   init_tags_yr1995,num_pts,hdata_1995,metadata,num_tags_rnd,list_var
   data = data(*,start_buff:end_buff)
+  size_dn_hirate=(1)
   data_into_hdata_1995,start_buff,end_buff, data, hdata_1995,hours_str, minutes_str, seconds_str, list_var, size_dn_hirate, fltno
 
   ;stop

@@ -21,7 +21,6 @@ yrnos = ['Year 1995 (VORTEX Project)', $
         'Year 1998 (CHILL) Project',$
         'Year 1999 (Turbulence Project)', $
          'Year 2000 (STEPS Project)', $
-         'Year 2001 (Rapid City)', $
          'Year 2002 (Rapid City and Colorado)', $
          'Year 2003 (Rapid City-Norman)' ,$
          'Year 2004 (Rapid City)', $
@@ -66,17 +65,12 @@ if (yr eq 1) then begin
 year = 'yr1998'
   ; select a flight number
 
-   fltnos = ['Flight 711 (06/11/1998) - Chill - NO Charge', $
-   			 'Flight 712 (06/12/1998) - Chill - NO Charge', $
-   			 'Flight 713 (06/12/1998) - Chill - NO Charge', $
-   			 'Flight 714 (06/17/1998) - Chill - NO Charge', $
-   			 'Flight 716 (06/21/1998) - Chill - NO Charge', $
-   			 'Flight 717 (06/22/1998) - Chill - NO Charge']
+   fltnos = ['Flight 717 (06/22/1998) - Chill - NO Charge']
 
-    fltn     = ['711','712','713','714','716','717']
+    fltn     = ['717']
 
-    fltno_ncar = ['0','1','2','3','4','5']
-    flt_date   = ['0611','0612','0612','0617','0621','0622']
+    fltno_ncar = ['5']
+    flt_date   = ['0622']
 
    flt_ind = menu_wid_wide(['Select Flight Number:',fltnos])
 
@@ -272,99 +266,25 @@ fn_src = dir1 + year + path_sep()+'f' + fltn(flt_ind) +path_sep()+'flt'+ fltn(fl
 endif
 
 
-;---------------------------------------------------------
-; Flights valid for yr 2001!
-;---------------------------------------------------------
-if (yr eq 4) then begin
-
-year = 'yr2001'
-  ; select a flight number
-
-   fltnos = ['Flight 766 (06/22/2001) - Rapid City - Charge Recorded',$
-             'Flight 767 (07/06/2001) - Rapid City - Charge Recorded',$
-             'Flight 768 (05/31/2001) - To Forth Collins - Charge Recorded',$
-             'Flight 769 (07/10/2001) - From Forth Collins - Charge Recorded',$
-             'Flight 770 (07/20/2001) - Rapid City - Charge Recorded',$
-             'Flight 771 (08/08/2001) - Rapid City - NO Charge' ,$
-             'Flight 772 (08/14/2001) - Rapid City - NO Charge',$
-             'Flight 773 (09/19/2001) - Rapid City - NO Charge',$
-             'Flight 774 (10/04/2001) - Rapid City - NO Charge']
-
-    fltn     = ['766','767','768','769','770',$
-                '771','772','773','774']
-
-    fltno_ncar = ['0','1','2','3','4','5','6','7',$
-                  '8']
-    flt_date   = ['0622','0706','0531','0710',$
-                  '0720','0808','0814','0919','1004']
-
-   flt_ind = menu_wid_wide(['Select Flight Number:',fltnos])
-
-
-   ;if flt_ind ne 0 then begin
-   fn_out = dir2 + 'output'+path_sep()+'f' +  fltn(flt_ind) + '_' $
-                        + flt_date(flt_ind) + '00.dat'
-   title_flt = 'flt ' + fltn(flt_ind)
-
-   fltno = fltn(flt_ind)
-   flt_num = fltno
-
-   fn_hvps = dir1 + year +path_sep()+'f' + fltn(flt_ind) + path_sep()+'f' + $
-                        fltn(flt_ind)+'hvps.raw'
-   print,'fn_hvps: ',fn_hvps
-
-   fn_reduce = dir1 + year+ path_sep()+'f'+fltn(flt_ind)+path_sep()+'flt'+fltn(flt_ind)+'.rnd'
-   print,'fn_reduced: ',fn_reduce
-
-   fn_2dc = dir1 + year +path_sep()+'f' + fltn(flt_ind) +path_sep()+'f'+ fltn(flt_ind)+$
-                        '_2dc.raw'
-   print,'fn_2dc: ',fn_2dc
-
-   fn_fssp = dir1 + 'yr2001'+path_sep()+'tables'+path_sep()+'fssp.chn'
-   print,'fssp_chn: ',fn_fssp
-
-   fn_posttel = dir1 + 'yr2001'+path_sep()+'tables'+path_sep()+'posttel.tag'
-   print,'fn_posttel: ',fn_posttel
-
-   fn_hail = dir1 + year +path_sep()+'f' + fltn(flt_ind) +path_sep()+'f'+ fltn(flt_ind)+$
-                        'hail.raw'
-   print,'fn_hail: ',fn_hail
-
-   fn_raw = dir1 + year +path_sep()+'f' + fltn(flt_ind) +path_sep()+'flt'+ fltn(flt_ind)+$
-                        '.raw'
-   print,'fn_raw: ',fn_raw
-
-fn_src = dir1 + year + path_sep()+'f' + fltn(flt_ind) +path_sep()+'flt'+ fltn(flt_ind)+ '.src'
-
-endif
-
 
 ;---------------------------------------------------------
 ; Flights valid for yr 2002!
 ;---------------------------------------------------------
-if (yr eq 5) then begin
+if (yr eq 4) then begin
 
 year = 'yr2002'
   ; select a flight number
 
-   fltnos = ['Flight 775 (04/19/2002) - Rapid City - NO Charge',$
-             'Flight 776 (05/03/2002) - Rapid City - NO Charge',$
-             'Flight 777 (05/23/2002) - Rapid City - NO Charge',$
-             'Flight 778 (06/03/2002) - To Greeley, CO - NO Charge',$
-             'Flight 779 (06/05/2002) - Greeley - Test Flight - NO Charge',$
-             'Flight 780 (06/09/2002) - Greeley - Test Flight - NO Charge',$
-             'Flight 781 (06/11/2002) - Greeley - NO Charge',$
+   fltnos = ['Flight 781 (06/11/2002) - Greeley - NO Charge',$
              'Flight 782 (06/12/2002) - Greeley - NO Charge',$
              'Flight 785 (06/15/2002) - Greeley - NO Charge']
 
 
-    fltn     = ['775','776','777','778','779',$
-                '780','781','782','785']
+    fltn     = ['781','782','785']
 
-    fltno_ncar = ['0','1','2','3','4','5','6','7',$
+    fltno_ncar = ['6','7',$
                   '8']
-    flt_date   = ['0419','0503','0523','0603',$
-                  '0605','0609','0611','0612','0615']
+    flt_date   = ['0611','0612','0615']
 
    flt_ind = menu_wid_wide(['Select Flight Number:',fltnos])
 
@@ -421,27 +341,17 @@ endif
 ;---------------------------------------------------------
 ; Flights valid for yr 2003!
 ;---------------------------------------------------------
-if (yr eq 6) then begin
+if (yr eq 5) then begin
 
 year = 'yr2003'
   ; select a flight number
 
-   fltnos = ['Flight 790 (02/20/2003) - Rapid City - NO Charge',$
-             'Flight 791 (02/27/2003) - Rapid City - NO Charge',$
-             'Flight 792 (05/07/2003) - Rapid City - NO Charge',$
-             'Flight 793 (05/08/2003) - Rapid City - NO Charge',$
-             'Flight 797 (05/15/2003) - Norman - Test Flight -NO Charge',$
-             'Flight 798 (05/16/2003) - Norman - NO Charge',$
+   fltnos = ['Flight 798 (05/16/2003) - Norman - NO Charge',$
              'Flight 800 (05/19/2003) - Norman - NO Charge',$
-             'Flight 801 (05/22/2003) - Norman - NO Charge',$
              'Flight 802 (05/23/2003) - Norman - NO Charge',$
              'Flight 803 (06/01/2003) - Norman - NO Charge',$
-             'Flight 804 (06/02/2003) - Norman - NO Charge',$
              'Flight 805 (06/04/2003) - Norman - NO Charge',$
              'Flight 807 (06/10/2003) - Norman - NO Charge',$
-             'Flight 810 (07/09/2003) - Rapid City - NO Charge',$
-             'Flight 811 (07/13/2003) - Rapid City - NO Charge', $
-             'Flight 812 (07/21/2003) - Rapid City to Greeley',$
              'Flight 813 (07/23/2003) - Greeley - NO Charge',$
              'Flight 814 (07/25/2003) - Greeley - NO Charge',$
              'Flight 815 (07/26/2003) - Greeley - NO Charge',$
@@ -451,21 +361,19 @@ year = 'yr2003'
              'Flight 820 (07/30/2003) - Greeley - NO Charge']
 
 
-    fltn     = ['790','791','792','793','797',$
-                '798','800','801','802','803',$
-                '804','805','807','810','811',$
-                '812','813','814','815','816',$
+    fltn     = ['798','800','802','803',$
+                '805','807',$
+                '813','814','815','816',$
                 '817','819','820']
 
-    fltno_ncar = ['0','1','2','3','4','5','6','7',$
-                  '8','9','10','11','12','13','14',$
-                  '15','16','17','18','19','20','21',$
+    fltno_ncar = ['5','6',$
+                  '8','9','11','12',$
+                  '16','17','18','19','20','21',$
                   '22']
 
-    flt_date   = ['0220','0227','0507','0508',$
-                  '0515','0516','0519','0522',$
-                  '0523','0601','0602','0604',$
-                  '0610','0709','0713','0721',$
+    flt_date   = ['0516','0519',$
+                  '0523','0601','0604',$
+                  '0610',$
                   '0723','0725','0726','0727',$
                   '0728','0729','0730']
 
@@ -524,7 +432,7 @@ endif
 ;---------------------------------------------------------
 ; Flights valid for yr 2004!
 ;---------------------------------------------------------
-if (yr eq 7) then begin
+if (yr eq 6) then begin
 
 year = 'yr2004'
   ; select a flight number
@@ -590,7 +498,7 @@ endif
 ;---------------------------------------------------------
 
 
-if (yr gt 0) and (yr lt 8) then begin
+if (yr gt 0) and (yr lt 7) then begin
 
    ; save selected flight files in a temporary file
    fn = dir2 + 'lib'+path_sep()+'flightselected.txt'
@@ -613,7 +521,7 @@ if (yr gt 0) and (yr lt 8) then begin
 
 endif
 
-if yr eq 8 then begin
+if yr eq 7 then begin
 
        mes = 'No year was selected! Bye now!'
        result = dialog_message(mes, /Information)

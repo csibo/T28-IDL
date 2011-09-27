@@ -12,11 +12,11 @@ PRO data_into_hdata_1995, start_buff,end_buff,data, hdata_1995, hours_str, minut
 if ((fltno eq 655) OR (fltno eq 656) or (fltno eq 658)) then begin
 ;populate hdata with the values we need to display
 hours_hirate=float(hours_str(start_buff:end_buff))
-  hdata_1995.hours_hirate(*) = interpol(hours_hirate,size_dn_hirate)
+ hdata_1995.hours_hirate(*) = interpol(hours_hirate,size_dn_hirate)
   print,'min,max(hdata_1994.hours_hirate): ',min(hdata_1995.hours_hirate),max(hdata_1995.hours_hirate)
   hdata_1995.hours_hirate = hdata_1995.hours_hirate -1.0
   print,'min,max(hdata_1995.hours_hirate): ',min(hdata_1995.hours_hirate),max(hdata_1995.hours_hirate)
-  stop
+  ;stop
 minutes_hirate= float(minutes_str(start_buff:end_buff))
   hdata_1995.minutes_hirate(*) = interpol(minutes_hirate,size_dn_hirate)
 dec_seconds_hirate= float(seconds_str(start_buff:end_buff))

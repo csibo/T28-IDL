@@ -50,23 +50,21 @@ if (yr eq 0) then begin
 year = 'yr1995'
   ; select a flight number
 
-   fltnos = ['Flight 654 (05/03/1995) - Norman, OK', $
-   			 'Flight 655 (05/05/1995) - Norman, OK', $
+   fltnos = ['Flight 655 (05/05/1995) - Norman, OK', $
    			 'Flight 656 (05/07/1995) - Norman, OK', $
    			 'Flight 658 (05/17/1995) - Norman, OK', $
    			 'Flight 660 (05/21/1995) - Norman, OK', $
    			 'Flight 661 (05/23/1995) - Norman, OK', $
-   			 'Flight 665 (06/12/1995) - Ft.Collins, CO', $
    			 'Flight 666 (06/17/1995) - Ft.Collins, CO', $
    			 'Flight 667 (06/20/1995) - Ft.Collins, CO', $
    			 'Flight 668 (06/22/1995) - Ft.Collins, CO', $
    			 'Flight 670 (06/27/1995) - Ft.Collins, CO', $
    			 'Flight 671 (06/28/1995) - Ft.Collins, CO']
 
-    fltn     = ['654','655','656','658','660','661','665','666','667','668','670','671']
+    fltn     = ['655','656','658','660','661','666','667','668','670','671']
 
-    fltno_ncar = ['0','1','2','3','4','5','6','7','8','9','10','11']
-    flt_date   = ['0503','0505','0507','0517','0521','0523','0612','0617','0620','0622','0627','0628']
+    fltno_ncar = ['1','2','3','4','5','7','8','9','10','11']
+    flt_date   = ['0505','0507','0517','0521','0523','0617','0620','0622','0627','0628']
 
    flt_ind = menu_wid_wide(['Select Flight Number:',fltnos])
 
@@ -382,24 +380,15 @@ if (yr eq 5) then begin
 year = 'yr2002'
   ; select a flight number
 
-   fltnos = ['Flight 775 (04/19/2002) - Rapid City - NO Charge',$
-             'Flight 776 (05/03/2002) - Rapid City - NO Charge',$
-             'Flight 777 (05/23/2002) - Rapid City - NO Charge',$
-             'Flight 778 (06/03/2002) - To Greeley, CO - NO Charge',$
-             'Flight 779 (06/05/2002) - Greeley - Test Flight - NO Charge',$
-             'Flight 780 (06/09/2002) - Greeley - Test Flight - NO Charge',$
-             'Flight 781 (06/11/2002) - Greeley - NO Charge',$
+   fltnos = ['Flight 781 (06/11/2002) - Greeley - NO Charge',$
              'Flight 782 (06/12/2002) - Greeley - NO Charge',$
              'Flight 785 (06/15/2002) - Greeley - NO Charge']
 
 
-    fltn     = ['775','776','777','778','779',$
-                '780','781','782','785']
+    fltn     = ['781','782','785']
 
-    fltno_ncar = ['0','1','2','3','4','5','6','7',$
-                  '8']
-    flt_date   = ['0419','0503','0523','0603',$
-                  '0605','0609','0611','0612','0615']
+    fltno_ncar = ['6','7','8']
+    flt_date   = ['0611','0612','0615']
 
    flt_ind = menu_wid_wide(['Select Flight Number:',fltnos])
 
@@ -457,22 +446,12 @@ if (yr eq 6) then begin
 year = 'yr2003'
   ; select a flight number
 
-   fltnos = ['Flight 790 (02/20/2003) - Rapid City - NO Charge',$
-             'Flight 791 (02/27/2003) - Rapid City - NO Charge',$
-             'Flight 792 (05/07/2003) - Rapid City - NO Charge',$
-             'Flight 793 (05/08/2003) - Rapid City - NO Charge',$
-             'Flight 797 (05/15/2003) - Norman - Test Flight -NO Charge',$
-             'Flight 798 (05/16/2003) - Norman - NO Charge',$
+   fltnos = ['Flight 798 (05/16/2003) - Norman - NO Charge',$
              'Flight 800 (05/19/2003) - Norman - NO Charge',$
-             'Flight 801 (05/22/2003) - Norman - NO Charge',$
              'Flight 802 (05/23/2003) - Norman - NO Charge',$
              'Flight 803 (06/01/2003) - Norman - NO Charge',$
-             'Flight 804 (06/02/2003) - Norman - NO Charge',$
              'Flight 805 (06/04/2003) - Norman - NO Charge',$
              'Flight 807 (06/10/2003) - Norman - NO Charge',$
-             'Flight 810 (07/09/2003) - Rapid City - NO Charge', $
-             'Flight 811 (07/13/2003) - Rapid City - NO Charge', $
-             'Flight 812 (07/21/2003) - Rapid City to Greeley',$
              'Flight 813 (07/23/2003) - Greeley - NO Charge',$
              'Flight 814 (07/25/2003) - Greeley - NO Charge',$
              'Flight 815 (07/26/2003) - Greeley - NO Charge',$
@@ -481,20 +460,17 @@ year = 'yr2003'
              'Flight 819 (07/29/2003) - Greeley - NO Charge',$
              'Flight 820 (07/30/2003) - Greeley - NO Charge']
 
-    fltn     = ['790','791','792','793','797',$
-                '798','800','801','802','803',$
-                '804','805','807','810','811',$
-                '812','813','814','815','816',$
+    fltn     = ['798','800','802','803',$
+                '805','807','813','814','815','816',$
                 '817','819','820']
 
-    fltno_ncar = ['0','1','2','3','4','5','6','7',$
-                  '8','9','10','11','12','13','14',$
-                  '15','16','17','18','19','20','21',$
+    fltno_ncar = ['5','6',$
+                  '8','9','11','12',$
+                  '16','17','18','19','20','21',$
                   '22']
 
-    flt_date   = ['0220','0227','0507','0508','0515',$
-                  '0516','0619','0522','0523','0601','0602',$
-                  '0604','0610','0709','0713','0721','0723',$
+    flt_date   = ['0516','0619','0523','0601',$
+                  '0604','0610','0723',$
                   '0725','0726','0727','0728','0729','0730']
 
    flt_ind = menu_wid_wide(['Select Flight Number:',fltnos])
