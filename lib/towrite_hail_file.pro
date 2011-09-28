@@ -10,8 +10,9 @@
 ;
 ;-------------------------------------------------------------
 
-pro towrite_hail_file, switcht, start_time, end_time, num_buffers, start_buffer, end_buffer, b_info_arr, GROUP = base_leader
+pro towrite_hail_file, switcht, start_time, end_time, num_buffers, start_buffer, end_buffer, b_info_arr, ev,  GROUP = base_leader
 
+widget_control,ev.top,get_uvalue=state2dc
 
 tvlct,255,0,0,1
 tvlct,0,255,0,2
@@ -30,7 +31,6 @@ fn_out = ''
 title_flt = ''
 fltno = 0
 flt_num = ''
-fn_hvps = ''
 fn_reduced =''
 fn_2dc = ''
 fssp_chn = ''
@@ -45,7 +45,6 @@ readf,1,fn_out
 readf,1,title_flt
 readf,1,fltno
 flt_num = strtrim(fltno,2)
-readf,1,fn_hvps
 readf,1,fn_reduced
 readf,1,fn_2dc
 readf,1,fssp_chn
@@ -78,6 +77,7 @@ endfor
 ;read HAIL counts
 ;------------------------------------------------------------
 ;- Get the reduced TAS for the time closest to the 2DC buffer_num
+print, state2dc
  tem = min(abs((state2dc.time_red) - (state2dc.time(state2dc.buffer_num))),ind_red)
  reduced_time = state2dc.time_red(ind_red)
  calc_tas = state2dc.calc_tas(ind_red)
@@ -206,7 +206,7 @@ case switcht of
      printf,1,'Number of particles in each image buffer: ',b_info.num_blobs
      printf,1,''
 num_particles = total(b_info.num_blobs)
-     printf,1,' xsize (um)         ysize(um)
+     printf,1,' xsize (um)         ysize(um)'
      printf,1,'--------------------------------------------------------'
      for i = 0, num_particles -1 do begin
        printf,1,xsizes(i), ysizes(i)

@@ -129,11 +129,15 @@ ptype = menu_wid_new(['Processing:','Display HAIL Buffers', 'Write Hail-Count Ou
 
 systime_start = systime(0)
 
+base=widget_base(/column)
+ev=widget_event(base)
+widget_control,base,set_uvalue=state2dc
+
 case ptype of
 
     0: display_buffers2,files,specs,b_info_arr,start_buffer,end_buffer,skip,buf_ptrs,titl
 
-    1: towrite_hail_file, 0, start_time, end_time, num_buffers, start_buffer, end_buffer, b_info_arr
+    1: towrite_hail_file, 0, start_time, end_time, num_buffers, start_buffer, end_buffer, b_info_arr,ev
 
 endcase
 
