@@ -1,0 +1,10 @@
+/net/work/T28/idl/t28display4.0/output/f725_060500.dat
+flt 725
+725
+/net/work/T28/idl/data/yr1999/f725/flt725.rnd
+/net/work/T28/idl/data/yr1999/f725/f725_2dc.raw
+/net/work/T28/idl/data/yr1999/tables/fssp.chn
+/net/work/T28/idl/data/yr1999/tables/posttel.tag
+yr1999
+/net/work/T28/idl/data/yr1999/f725/f725hail.raw
+/net/work/T28/idl/data/yr1999/f725/flt725.raw
